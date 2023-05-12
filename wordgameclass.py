@@ -5,7 +5,7 @@ def play_game(filename):
     with open(filename) as file:
         word_list = file.read().split()
     random_word = random.choice(word_list)
-    print('***Word Guessing Game***')
+    print('Do you want to play a game?')
     word_list= {}
     print(random_word)
     display = []
@@ -29,19 +29,17 @@ def play_game(filename):
             chances -= 1
             print(f"Wrong. You have {chances} more chances")
         else:
-            for character in random_word:
-                if character in user_guesses:
-                    for i in range(len(random_word)):
-                        if guess == random_word[i]:
-                            display[i] = guess
+            for i in range(len(random_word)):
+                if guess == random_word[i]:
+                    display[i] = guess
             print(display)
 
 
 
     if chances == 0:
         print(f"You're a wicked big Loozah. Answer: {random_word} ")
-    else:
-        print("You're a winnah")
+    # else:
+    #     print("You're a winnah")
 
     # for each character in the random word that was picked we need to check w. user guesses
 
